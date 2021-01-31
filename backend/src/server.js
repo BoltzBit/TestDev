@@ -2,6 +2,25 @@ const express = require('express');
 
 const app = express();
 
+const { Cliente } = require('./app/models/index');
+
+
+app.get('/user', async (req,res) => {
+    const cliente = await Cliente.create({
+        tipopessoa: 2,
+        cpf_cnpj: '95',
+        nome: 'sdoivb',
+        endereco: 'sdoivb',
+        nro_logradouro: 'sdlkhvb',
+        bairro: 'lsdhjvb',
+        cidade: 'sdcv',
+        uf:'pp',
+        cep: 'lsdhjvb'
+    });
+
+    return res.json(cliente);
+});
+
 app.get('/users/:id', (req, res) => {
     const { id } = req.params;
 
