@@ -2,16 +2,19 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Cliente', {
+    return queryInterface.createTable('Clientes', {
       id:{
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      tipopessoa:{
+      tipopessoa_id:{
         allowNull: false,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: { model: 'TipoPessoa', key: 'id' },
+          onUpdate:'CASCADE',
+          onDelete: 'CASCADE',
       },
       cpf_cnpj:{
         allowNull: false,
@@ -57,6 +60,6 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Cliente');
+    return queryInterface.dropTable('Clientes');
   }
 };

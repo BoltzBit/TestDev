@@ -3,5 +3,9 @@ module.exports = (sequelize, DataTypes) => {
         descricao: DataTypes.STRING(30)
     });
 
+    TipoPessoa.associate = models => {
+        TipoPessoa.belongsTo(models.Clientes, { foreignKey: 'tipopessoa_id', as: 'Clientes' });
+    };
+
     return TipoPessoa;
 }
