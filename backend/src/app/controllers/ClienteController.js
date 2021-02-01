@@ -1,11 +1,12 @@
 const  { Clientes }   = require('../models');
 
 module.exports = {
-    async index(req, res){
+    async getAll(req, res){
         const clientes = await Clientes.findAll({});
 
         return res.json(clientes);
     },
+
     async create(req, res){
         const clientes = await Clientes.create({
             cpf_cnpj: '95',
@@ -20,6 +21,5 @@ module.exports = {
 
         return res.json(clientes);
     }
-
 };
 

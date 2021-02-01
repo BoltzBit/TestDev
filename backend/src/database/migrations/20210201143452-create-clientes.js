@@ -9,12 +9,9 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      tipopessoa_id:{
+      tipopessoa:{
         allowNull: false,
         type: Sequelize.INTEGER,
-        references: { model: 'TipoPessoa', key: 'id' },
-          onUpdate:'CASCADE',
-          onDelete: 'CASCADE',
       },
       cpf_cnpj:{
         allowNull: false,

@@ -4,9 +4,9 @@ const ClienteController = require('./app/controllers/ClienteController');
 
 const router = new express.Router();
 
-router.get('/clientes', ClienteController.index);
+router.get('/clientes', ClienteController.getAll);
 
-router.get('/clientes/:id', );
+router.get('/clientes/:id', () => {console.log('para o erro')});
 
 router.post('/clientes', ClienteController.create);
 

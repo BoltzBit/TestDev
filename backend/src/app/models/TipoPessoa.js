@@ -2,10 +2,14 @@ module.exports = (sequelize, DataTypes) => {
     const TipoPessoa = sequelize.define('TipoPessoa', {
         descricao: DataTypes.STRING(30)
     });
+    
+    const tipoPessoa = ['Física', 'Jurídica'];
 
-    TipoPessoa.associate = models => {
-        TipoPessoa.belongsTo(models.Clientes, { foreignKey: 'tipopessoa_id', as: 'Clientes' });
-    };
+    tipoPessoa.forEach(item => {
+        TipoPessoa.create({
+            descricao: item
+        });
+    });
 
     return TipoPessoa;
 }
