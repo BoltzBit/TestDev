@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
     });
     
     const tipoPessoa = ['Física', 'Jurídica'];
-
+    
     tipoPessoa.forEach(item => {
         TipoPessoa.create({
             descricao: item
