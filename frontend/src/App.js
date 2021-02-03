@@ -12,11 +12,11 @@ const App = () => {
   return  (
     <Layout>
       <Header>
-        <div style={{color:'red'}}>TestDev</div>
+        <div style={{color:'#ffff', fontSize:'28px'}}>TestDev</div>
       </Header>
 
       <Content style={{ padding: '0 50px'}}>
-        <div>
+        <div style={{marginTop: '30px'}}>
           <Routes />
         </div>
       </Content>

@@ -8,6 +8,16 @@ import api from '../services/api';
 
 const Clientes = () => {
     const [ data, setData ] = useState([]);
+
+    async function deleteClient(id){
+
+        await api.delete(`clientes/${id}`);
+
+        alert('Cliente deletado com sucesso!');
+
+        window.location.reload();
+    }
+
     const colums = [
         { title: 'Nome', dataIndex: 'nome', key: 'nome'},
         { title: 'CPF/CNPJ', dataIndex:'cpf_cnpj', key: 'cpf_cnpj'},
@@ -20,7 +30,7 @@ const Clientes = () => {
         { title: 'Ações', key: 'action', render: (text, record) => (
             <Space size="middle">
                 <a href={`/clientes/${record.id}`}>Editar</a>
-                <a href = {`/clientes/${record.id}`}>Deletar</a>
+                <button onClick={() => deleteClient(record.id)}>Deletar</button>
             </Space>
         )},
     ];

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import 'antd/dist/antd.css';
 import {
   Form,
@@ -12,6 +13,7 @@ import {
 import api from '../services/api';
 
 const Cadastro = () => {
+    const history = useHistory(); 
     const [ form ] = Form.useForm();
     const [componentSize, setComponentSize] = useState('default');
     const [ tipoPessoa, setTipoPessoa ] = useState([]);
@@ -30,6 +32,8 @@ const Cadastro = () => {
       await api.post('clientes',values);
   
       alert('Cadastro Realizado com sucesso!');
+
+      history.push('/clientes');
   
     }
   
