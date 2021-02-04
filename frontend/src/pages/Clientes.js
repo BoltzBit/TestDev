@@ -29,7 +29,7 @@ const Clientes = () => {
         { title: 'UF', dataIndex: 'uf', key: 'uf'},
         { title: 'Ações', key: 'action', render: (text, record) => (
             <Space size="middle">
-                <a href={`/clientes/${record.id}`}>Editar</a>
+                <a href={`/editar/${record.id}`}>Editar</a>
                 <button onClick={() => deleteClient(record.id)}>Deletar</button>
             </Space>
         )},
