@@ -12,9 +12,9 @@ import {
 
 import api from '../services/api';
 
-const Cadastro = () => {
+const EditarCliente = () => {
     const { id } = useParams();
-    const [ data, setData ] = useState([]);
+    const { data, setData } = useState({});
     const history = useHistory(); 
     const [ form ] = Form.useForm();
     const [componentSize, setComponentSize] = useState('default');
@@ -71,8 +71,8 @@ const Cadastro = () => {
         >
         <Row>
             <Col span={18} offset={9}>
-          <Form.Item label="Nome" name="nome" rules={[{ required: true }]} defaultValue={`${data.nome}`}>
-            <Input defaultValue={`${data.nome}`}/>
+          <Form.Item label="Nome" name="nome" rules={[{ required: true }]}>
+            <Input defaultValue={data.nome}/>
           </Form.Item>
           <Form.Item>
             <Button
@@ -89,4 +89,4 @@ const Cadastro = () => {
     );
   };
 
-export default Cadastro;
+export default EditarCliente;
