@@ -14,7 +14,7 @@ import api from '../services/api';
 
 const EditarCliente = () => {
     const { id } = useParams();
-    const { data, setData } = useState({});
+    const [ data, setData ] = useState({});
     const history = useHistory(); 
     const [ form ] = Form.useForm();
     const [componentSize, setComponentSize] = useState('default');
