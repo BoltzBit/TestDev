@@ -19,11 +19,13 @@ const Cadastro = () => {
     const [ tipoPessoa, setTipoPessoa ] = useState([]);
   
     useEffect(() => {
-      api.get('pessoa')
-      .then(response => {
-        console.log(response.data)
-        setTipoPessoa(response.data);
-      });
+		async function fecthTipoPessoa(){
+			const response = await api.get('pessoa');
+			
+			setTipoPessoa(response.data);
+		}
+		
+		fecthTipoPessoa();
     },[]);
   
     async function finishForm(values) {
